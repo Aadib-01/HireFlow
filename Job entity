@@ -3,6 +3,7 @@ package com.hireflow.entity;
 import jakarta.persistence.*;
 import java.time.LocalDateTime;
 
+
 @Entity
 @Table(name = "jobs")
 public class Job {
