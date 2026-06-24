@@ -1,1 +1,85 @@
+package com.hireflow.entity;
 
+import jakarta.persistence.*;
+
+@Entity
+@Table(name = "recruiters")
+public class Recruiter {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+
+    private String companyName;
+
+    private String companyEmail;
+
+    private String companyWebsite;
+
+    private String location;
+
+    @OneToOne
+    @JoinColumn(name = "user_id")
+    private User user;
+
+    public Recruiter() {
+    }
+
+    public Recruiter(Long id, String companyName, String companyEmail,
+                     String companyWebsite, String location, User user) {
+        this.id = id;
+        this.companyName = companyName;
+        this.companyEmail = companyEmail;
+        this.companyWebsite = companyWebsite;
+        this.location = location;
+        this.user = user;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public String getCompanyName() {
+        return companyName;
+    }
+
+    public void setCompanyName(String companyName) {
+        this.companyName = companyName;
+    }
+
+    public String getCompanyEmail() {
+        return companyEmail;
+    }
+
+    public void setCompanyEmail(String companyEmail) {
+        this.companyEmail = companyEmail;
+    }
+
+    public String getCompanyWebsite() {
+        return companyWebsite;
+    }
+
+    public void setCompanyWebsite(String companyWebsite) {
+        this.companyWebsite = companyWebsite;
+    }
+
+    public String getLocation() {
+        return location;
+    }
+
+    public void setLocation(String location) {
+        this.location = location;
+    }
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
+    }
+}
