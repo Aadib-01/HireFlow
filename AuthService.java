@@ -1,7 +1,9 @@
 package com.aaditya.hireflow.service;
 
 import com.aaditya.hireflow.dto.RegisterRequest;
+
 import com.aaditya.hireflow.model.Role;
+
 import com.aaditya.hireflow.model.User;
 import com.aaditya.hireflow.repository.UserRepository;
 import org.springframework.security.crypto.password.PasswordEncoder;
